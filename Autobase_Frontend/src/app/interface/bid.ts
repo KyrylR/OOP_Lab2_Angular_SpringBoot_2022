@@ -1,6 +1,7 @@
 export interface Bid {
   id?: number;
   workPurpose: string;
-  isFinished: boolean;
+  finished: boolean;
   driverFeedback: string;
+  driverId: number;
 }

@@ -1,7 +1,7 @@
-import { CustomValdators } from './custom-valdators';
+import { CustomValidators } from './custom-validators';
 
 describe('CustomValdators', () => {
   it('should create an instance', () => {
-    expect(new CustomValdators()).toBeTruthy();
+    expect(new CustomValidators()).toBeTruthy();
   });
 });

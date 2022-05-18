@@ -1,1 +1,64 @@
-<p>bid-details works!</p>
+<div class="container">
+  <div class ="m-2 container">
+    <h4>Id: {{ bid?.id }}</h4>
+  </div>
+  <div class="m-2 container">
+    <h4>Work purpose: {{ bid?.workPurpose }}</h4>
+  </div>
+  <div class="m-2 container">
+    <h4>Finished?:
+      <div *ngIf="bid?.finished; else elseBlock">Yes!</div>
+      <ng-template #elseBlock>No!</ng-template>
+    </h4>
+  </div>
+  <div class="m-2 container">
+    <h4>Driver feedback: {{ bid?.driverFeedback }}</h4>
+  </div>
+  <div class="m-2 container">
+    <h4>Driver Id: {{ bid?.driverId }}</h4>
+  </div>
+
+  <form [formGroup]="bidDetailFormGroup" (ngSubmit)="onUpdate()">
+      <div class="m-2 container p-2">
+        <label for="workPurpose">Work Purpose</label>
+        <input type="text" class="m-2 form-control" id="workPurpose" formControlName="workPurpose" placeholder="Enter work purpose">
+        <div *ngIf="workPurpose?.invalid && (workPurpose?.dirty   || workPurpose?.touched)" class="m-2 alert alert-danger mt-1">
+          <div *ngIf="workPurpose?.errors?.['required'] || workPurpose?.errors?.['notOnlyWhitespace']">
+            Work purpose is required
+          </div>
+          <div *ngIf="workPurpose?.errors?.['minlength']">
+            Work purpose must be at least 2 characters long
+          </div>
+        </div>
+      </div>
+      <div class="m-2 container p-2">
+        <div class="m-2 form-check">
+          <input formControlName="isFinished" type="checkbox" class="m-2 form-check-input" id="isFinished">
+          <label class="m-2 form-check-label" for="isFinished">Finished?</label>
+        </div>
+      </div>
+      <div class="m-2 container p-2">
+        <label for="driverFeedback">Driver feedback</label>
+        <input type="text" class="m-2 form-control" id="driverFeedback" formControlName="driverFeedback" placeholder="Enter driver feedback">
+        <div *ngIf="driverFeedback?.invalid && (driverFeedback?.dirty || driverFeedback?.touched)" class="m-2 alert alert-danger mt-1">
+          <div *ngIf="driverFeedback?.errors?.['required'] || driverFeedback?.errors?.['notOnlyWhitespace']">
+            Driver feedback is required
+          </div>
+          <div *ngIf="driverFeedback?.errors?.['minlength']">
+            Driver feedback must be at least 2 characters long
+          </div>
+        </div>
+      </div>
+      <div class="m-2 container p-2">
+        <div class="m-2 form-group">
+          <label for="driverSelect">Choose Driver</label>
+          <select formControlName="driverSelect" multiple class="m-2 form-control" id="driverSelect">
+            <option [ngValue]="driver" *ngFor="let driver of drivers">{{ driver.name }}</option>
+          </select>
+        </div>
+      </div>
+    <button type="submit" class="m-2 btn btn-success p-2">Update</button>
+  </form>
+
+  <button type="submit" class="m-2 btn btn-danger p-2" (click)="onDelete()">Delete</button>
+</div>

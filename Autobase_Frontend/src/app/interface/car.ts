@@ -1,5 +1,5 @@
 export interface Car {
   id?: number;
-  isReady: boolean;
+  ready: boolean;
   purpose: string;
 }

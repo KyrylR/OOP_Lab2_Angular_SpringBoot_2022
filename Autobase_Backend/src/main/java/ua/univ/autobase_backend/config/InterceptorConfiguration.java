@@ -1,2 +1,13 @@
-package ua.univ.autobase_backend.config;public class InterceptorConfiguration {
+package ua.univ.autobase_backend.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class InterceptorConfiguration implements WebMvcConfigurer {
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new MethodInterceptor());
+    }
 }

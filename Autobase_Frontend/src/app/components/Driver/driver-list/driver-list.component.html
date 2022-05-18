@@ -1,1 +1,42 @@
-<p>driver-list works!</p>
+<div class="m-2 container">
+  <table class="m-2 table table-striped">
+    <caption></caption>
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let driver of drivers">
+      <th scope="row">
+        <a routerLink="/driver/{{ driver?.id }}">
+          {{ driver?.id }}
+        </a>
+      </th>
+      <td>{{ driver?.name }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="hasRole" class="container">
+    <form [formGroup]="driverFormGroup" (ngSubmit)="onPost()">
+      <label>Driver name:</label>
+      <input formControlName="driverName" class="m-2 form-control" type="text" placeholder="Enter name">
+      <div *ngIf="driverName?.invalid && (driverName?.dirty || driverName?.touched)"
+           class="m-2 alert alert-danger mt-1">
+        <div *ngIf="driverName?.errors?.['required'] || driverName?.errors?.['notOnlyWhitespace']">
+          Driver name is required
+        </div>
+        <div *ngIf="driverName?.errors?.['minlength']">
+          Driver name must be at least 2 characters long
+        </div>
+        <div *ngIf="driverName?.errors?.['unique']">
+          Driver name must be unique
+        </div>
+      </div>
+      <button type="submit" class="m-2 btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+

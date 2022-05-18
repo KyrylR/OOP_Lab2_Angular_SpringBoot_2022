@@ -1,1 +1,28 @@
-<p>driver-details works!</p>
+<div class="m-2 container">
+  <div class="m-2 container">
+    <h4>Id: {{ driver?.id }}</h4>
+  </div>
+  <div class="m-2 container">
+    <h4>Name: {{ driver?.name }}</h4>
+  </div>
+
+  <form [formGroup]="driverDetailFormGroup" (ngSubmit)="onUpdate()">
+    <label>Driver name:</label>
+    <input formControlName="driverDetailName" class="m-2 form-control" type="text" placeholder="Enter name">
+    <div *ngIf="driverDetailName?.invalid && (driverDetailName?.dirty || driverDetailName?.touched)"
+         class="m-2 alert alert-danger mt-1">
+      <div *ngIf="driverDetailName?.errors?.['required'] || driverDetailName?.errors?.['notOnlyWhitespace']">
+        Driver name is required
+      </div>
+      <div *ngIf="driverDetailName?.errors?.['minlength']">
+        Driver name must be at least 2 characters long
+      </div>
+      <div *ngIf="driverDetailName?.errors?.['unique']">
+        Driver name must be unique
+      </div>
+    </div>
+    <button type="submit" class="m-2 btn btn-success">Update</button>
+  </form>
+
+  <button type="submit" class="m-2 btn btn-danger" (click)="onDelete()">Delete</button>
+</div>

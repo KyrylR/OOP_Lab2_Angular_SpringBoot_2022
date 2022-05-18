@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CarDriver} from "../../../interface/car-driver";
+import {Driver} from "../../../interface/driver";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {CarDriverService} from "../../../services/car-driver.service";
+import {ActivatedRoute} from "@angular/router";
+import {DriverService} from "../../../services/driver.service";
+import {CarService} from "../../../services/car.service";
+import {Car} from "../../../interface/car";
 
 @Component({
   selector: 'app-car-driver-list',
@@ -7,9 +15,80 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarDriverListComponent implements OnInit {
 
-  constructor() { }
+  car_drivers: CarDriver[] = []
+  drivers: Driver[] = []
+  cars: Car[] = []
 
-  ngOnInit(): void {
+  car_driverFormGroup!: FormGroup;
+
+  private car_driver_default: any = {
+    'car': '',
+    'driver': ''
   }
 
+  constructor(private formBuilder: FormBuilder,
+              private car_driverService: CarDriverService,
+              private route: ActivatedRoute,
+              private driverService: DriverService,
+              private carService: CarService) {
+  }
+
+  get carSelect() {
+    return this.car_driverFormGroup.get('carSelect');
+  }
+
+  get driverSelect() {
+    return this.car_driverFormGroup.get('driverSelect');
+  }
+
+  ngOnInit(): void {
+    this.car_driverFormGroup = this.formBuilder.group({
+      carSelect: new FormControl('', [Validators.required]),
+      driverSelect: new FormControl('', [Validators.required]),
+    });
+
+    this.car_driverService.getCarDrivers().subscribe(
+      data => {
+        this.car_drivers = data;
+        console.log(data)
+      });
+
+    this.driverService.getDrivers().subscribe(
+      data => {
+        this.drivers = data;
+      }
+    );
+
+    this.carService.getCars().subscribe(
+      data => {
+        this.cars = data;
+      }
+    );
+  }
+
+  onPost() {
+    // @ts-ignore
+    if (this.car_driverFormGroup.invalid) {
+      // @ts-ignore
+      this.car_driverFormGroup.markAllAsTouched();
+      return;
+    }
+
+    this.car_driver_default.car = this.carSelect?.value[0]?._links.self.href;
+    this.car_driver_default.driver = this.driverSelect?.value[0]?._links.self.href;
+    this.car_driverService.createCarDriver(this.car_driver_default).subscribe({
+        next: response => {
+          console.log(`Response from deleting: ${response}`);
+          this.car_drivers.push(response);
+        },
+        error: err => {
+          console.log(`There was an error: ${err.message}`);
+        },
+        complete: () => {
+          console.log('Done delete the car_driver');
+        }
+      }
+    );
+  }
 }
+

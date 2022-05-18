@@ -1,1 +1,54 @@
-<p>car-list works!</p>
+<div class="container">
+  <table class="table table-striped">
+    <caption></caption>
+    <thead>
+    <tr>
+      <th scope="col">#
+      <th scope="col">Ready?</th>
+      <th scope="col">Purpose</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let car of cars">
+      <th scope="row">
+        <a routerLink="/car/{{ car.id }}">
+          {{ car.id }}
+        </a>
+      </th>
+      <td>
+        <div *ngIf="car.ready; else elseBlock">Yes!</div>
+        <ng-template #elseBlock>No!</ng-template>
+      </td>
+      <td>{{ car.purpose }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="roles[0] === 'ROLE_ADMIN'" class="container">
+    <form [formGroup]="carFormGroup" (ngSubmit)="onPost()">
+      <div class="container p-2">
+        <label for="carPurpose">Purpose</label>
+        <input formControlName="carPurpose" type="text" class="form-control" id="carPurpose"
+               placeholder="Enter purpose">
+        <div *ngIf="carPurpose?.invalid && (carPurpose?.dirty   || carPurpose?.touched)"
+             class="alert alert-danger mt-1">
+          <div *ngIf="carPurpose?.errors?.['required'] || carPurpose?.errors?.['notOnlyWhitespace']">
+            Purpose is required
+          </div>
+          <div *ngIf="carPurpose?.errors?.['minlength']">
+            Purpose must be at least 2 characters long
+          </div>
+        </div>
+      </div>
+      <div class="container p-2">
+        <div class="form-check">
+          <input formControlName="carReady" type="checkbox" class="form-check-input" id="carReady">
+          <label class="form-check-label" for="carReady">Ready?</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary p-2">Submit</button>
+    </form>
+  </div>
+</div>
+
+
