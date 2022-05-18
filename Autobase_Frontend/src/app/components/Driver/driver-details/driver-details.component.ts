@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Driver} from "../../../interface/driver";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomValidators, unique} from "../../../validators/custom-validators";
 import {DriverService} from "../../../services/driver.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {KeycloakService} from "keycloak-angular";
 
 @Component({
   selector: 'app-driver-details',
@@ -13,8 +14,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class DriverDetailsComponent implements OnInit {
 
   driver!: Driver;
-
   driverDetailFormGroup!: FormGroup;
+
+  roles: string[] = [];
 
   private driver_default: any = {
     'name': ''
@@ -23,11 +25,18 @@ export class DriverDetailsComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private driverService: DriverService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private keycloakService: KeycloakService) {
   }
 
   get driverDetailName() {
     return this.driverDetailFormGroup.get('driverDetailName');
+  }
+
+  get hasRole(): boolean {
+    let requiredRoles = ["ROLE_ADMIN"]
+    return requiredRoles.some((role) => this.roles.includes(role));
+    // return true;
   }
 
   ngOnInit(): void {
@@ -36,7 +45,7 @@ export class DriverDetailsComponent implements OnInit {
     });
 
     this.driverService.getDrivers().subscribe(
-      data =>  {
+      data => {
         this.driverDetailFormGroup = this.formBuilder.group({
           driverDetailName: new FormControl('',
             [Validators.required, Validators.minLength(2),
@@ -50,13 +59,15 @@ export class DriverDetailsComponent implements OnInit {
         [Validators.required, Validators.minLength(2),
           CustomValidators.notOnlyWhitespace]),
     });
+
+    this.roles = this.keycloakService.getUserRoles();
   }
 
   showDriver() {
 
     // @ts-ignore
     const driverId: number = +this.route.snapshot.paramMap.get('id');
-    this.driverService.getDriver(driverId).subscribe( data => {
+    this.driverService.getDriver(driverId).subscribe(data => {
       this.driver = data;
     });
   }
@@ -89,7 +100,7 @@ export class DriverDetailsComponent implements OnInit {
 
   onDelete() {
     if (this.driver.id != null) {
-      this.driverService.deleteDriver(this.driver.id).subscribe({
+      this.driverService.deleteDriver(this.driver.id, this.driver).subscribe({
           next: response => {
             console.log(`Response from deleting: ${response}`);
           },

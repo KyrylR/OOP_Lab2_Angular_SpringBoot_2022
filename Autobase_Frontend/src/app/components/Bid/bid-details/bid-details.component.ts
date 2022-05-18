@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Bid} from "../../../interface/bid";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomValidators} from "../../../validators/custom-validators";
@@ -6,6 +6,7 @@ import {BidService} from "../../../services/bid.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Driver} from "../../../interface/driver";
 import {DriverService} from "../../../services/driver.service";
+import {KeycloakService} from "keycloak-angular";
 
 @Component({
   selector: 'app-bid-details',
@@ -19,6 +20,8 @@ export class BidDetailsComponent implements OnInit {
 
   bidDetailFormGroup!: FormGroup;
 
+  roles: string[] = [];
+
   private bid_default: any = {
     'workPurpose': '',
     'isFinished': false,
@@ -30,7 +33,8 @@ export class BidDetailsComponent implements OnInit {
               private bidService: BidService,
               private route: ActivatedRoute,
               private driverService: DriverService,
-              private router: Router) {
+              private router: Router,
+              private keycloakService: KeycloakService) {
   }
 
   get workPurpose() {
@@ -48,6 +52,13 @@ export class BidDetailsComponent implements OnInit {
   get driverSelect() {
     return this.bidDetailFormGroup.get('driverSelect');
   }
+
+  get hasRole(): boolean {
+    let requiredRoles = ["ROLE_ADMIN", "ROLE_MANAGER"]
+    return requiredRoles.some((role) => this.roles.includes(role));
+    // return true;
+  }
+
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
@@ -67,14 +78,16 @@ export class BidDetailsComponent implements OnInit {
       data => {
         this.drivers = data;
       }
-    )
+    );
+
+    this.roles = this.keycloakService.getUserRoles();
   }
 
   showBid() {
 
     // @ts-ignore
     const bidId: number = +this.route.snapshot.paramMap.get('id');
-    this.bidService.getBid(bidId).subscribe( data => {
+    this.bidService.getBid(bidId).subscribe(data => {
       this.bid = data;
       // @ts-ignore
       console.log("Driver: " + (data.driverId))
@@ -92,7 +105,11 @@ export class BidDetailsComponent implements OnInit {
     this.bid_default.workPurpose = this.workPurpose?.value;
     this.bid_default.isFinished = this.isFinished?.value;
     this.bid_default.driverFeedback = this.driverFeedback?.value;
-    this.bid_default.driver = this.driverSelect?.value[0]?._links.self.href;
+    try {
+      this.bid_default.driver = this.driverSelect?.value[0]?._links.self.href;
+    } catch (Error) {
+      this.bid_default.driver = this.driverSelect?.value[0];
+    }
     if (this.bid.id != null) {
       this.bidService.updateBid(this.bid.id, this.bid_default).subscribe({
           next: response => {

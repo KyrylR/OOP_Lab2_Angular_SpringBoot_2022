@@ -38,6 +38,7 @@ export class CarListComponent implements OnInit {
   get hasRole(): boolean {
     let requiredRoles = ["ROLE_ADMIN"]
     return requiredRoles.some((role) => this.roles.includes(role));
+    // return true;
   }
 
   ngOnInit(): void {

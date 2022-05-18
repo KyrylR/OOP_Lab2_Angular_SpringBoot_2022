@@ -1,40 +1,40 @@
 <div class="m-2 container">
   <div class="m-2 container">
-    <h4>Id: {{ car.id }}</h4>
-  </div>
-  <div class="m-2 container">
     <h4>Ready:
-      <div *ngIf="car.ready; else elseBlock">Yes!</div>
+      <div *ngIf="car?.ready; else elseBlock">Yes!</div>
       <ng-template #elseBlock>No!</ng-template>
     </h4>
   </div>
   <div class="m-2 container">
-    <h4>Purpose: {{ car.purpose }}</h4>
+    <h4>Purpose: {{ car?.purpose }}</h4>
   </div>
 
-  <form [formGroup]="carDetailFormGroup" (ngSubmit)="onUpdate()">
-    <div class="m-2 container p-2">
-      <label for="carDetailPurpose">Car purpose</label>
-      <input formControlName="carDetailPurpose" type="text"
-             class="m-2 form-control" id="carDetailPurpose"
-             placeholder="Enter purpose">
-      <div *ngIf="carDetailPurpose?.invalid && (carDetailPurpose?.dirty   || carDetailPurpose?.touched)" class="m-2 alert alert-danger mt-1">
-        <div *ngIf="carDetailPurpose?.errors?.['required'] || carDetailPurpose?.errors?.['notOnlyWhitespace']">
-          Car purpose is required
-        </div>
-        <div *ngIf="carDetailPurpose?.errors?.['minlength']">
-          Car purpose must be at least 2 characters long
+  <div *ngIf="hasRole" class="container">
+    <form [formGroup]="carDetailFormGroup" (ngSubmit)="onUpdate()">
+      <div class="m-2 container p-2">
+        <label for="carDetailPurpose">Car purpose</label>
+        <input formControlName="carDetailPurpose" type="text"
+               class="m-2 form-control" id="carDetailPurpose"
+               placeholder="Enter purpose">
+        <div *ngIf="carDetailPurpose?.invalid && (carDetailPurpose?.dirty   || carDetailPurpose?.touched)"
+             class="m-2 alert alert-danger mt-1">
+          <div *ngIf="carDetailPurpose?.errors?.['required'] || carDetailPurpose?.errors?.['notOnlyWhitespace']">
+            Car purpose is required
+          </div>
+          <div *ngIf="carDetailPurpose?.errors?.['minlength']">
+            Car purpose must be at least 2 characters long
+          </div>
         </div>
       </div>
-    </div>
-    <div class="m-2 container p-2">
-      <div class="m-2 form-check">
-        <input formControlName="carDetailReady" type="checkbox" class="m-2 form-check-input" id="carDetailReady">
-        <label class="m-2 form-check-label" for="carDetailReady">Ready?</label>
+      <div class="m-2 container p-2">
+        <div class="m-2 form-check">
+          <input formControlName="carDetailReady" type="checkbox" class="m-2 form-check-input" id="carDetailReady">
+          <label class="m-2 form-check-label" for="carDetailReady">Ready?</label>
+        </div>
       </div>
-    </div>
-    <button type="submit" class="m-2 btn btn-success p-2">Update</button>
-  </form>
+      <button type="submit" class="m-2 btn btn-success p-2">Update</button>
+    </form>
 
-  <button type="submit" class="m-2 btn btn-danger p-2" (click)="onDelete()">Delete</button>
+    <button type="submit" class="m-2 btn btn-danger p-2" (click)="onDelete()">Delete</button>
+  </div>
 </div>

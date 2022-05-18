@@ -11,20 +11,20 @@
     <tbody>
     <tr *ngFor="let car of cars">
       <th scope="row">
-        <a routerLink="/car/{{ car.id }}">
-          {{ car.id }}
+        <a routerLink="/car/{{ car?.id }}">
+          {{ car?.id }}
         </a>
       </th>
       <td>
-        <div *ngIf="car.ready; else elseBlock">Yes!</div>
+        <div *ngIf="car?.ready; else elseBlock">Yes!</div>
         <ng-template #elseBlock>No!</ng-template>
       </td>
-      <td>{{ car.purpose }}</td>
+      <td>{{ car?.purpose }}</td>
     </tr>
     </tbody>
   </table>
 
-  <div *ngIf="roles[0] === 'ROLE_ADMIN'" class="container">
+  <div *ngIf="hasRole" class="container">
     <form [formGroup]="carFormGroup" (ngSubmit)="onPost()">
       <div class="container p-2">
         <label for="carPurpose">Purpose</label>

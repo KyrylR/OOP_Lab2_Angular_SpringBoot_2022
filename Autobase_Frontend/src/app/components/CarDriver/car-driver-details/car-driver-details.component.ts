@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CarDriver} from "../../../interface/car-driver";
 import {Driver} from "../../../interface/driver";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {CustomValidators} from "../../../validators/custom-validators";
 import {CarDriverService} from "../../../services/car-driver.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DriverService} from "../../../services/driver.service";
 import {Car} from "../../../interface/car";
 import {CarService} from "../../../services/car.service";
+import {KeycloakService} from "keycloak-angular";
 
 @Component({
   selector: 'app-car-driver-details',
@@ -22,6 +22,8 @@ export class CarDriverDetailsComponent implements OnInit {
 
   car_driverDetailFormGroup!: FormGroup;
 
+  roles: string[] = [];
+
   private car_driver_default: any = {
     'car': '',
     'driver': ''
@@ -32,7 +34,8 @@ export class CarDriverDetailsComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router,
               private driverService: DriverService,
-              private carService: CarService) {
+              private carService: CarService,
+              private keycloakService: KeycloakService) {
   }
 
   get carDetailSelect() {
@@ -41,6 +44,12 @@ export class CarDriverDetailsComponent implements OnInit {
 
   get driverDetailSelect() {
     return this.car_driverDetailFormGroup.get('driverDetailSelect');
+  }
+
+  get hasRole(): boolean {
+    let requiredRoles = ["ROLE_ADMIN"]
+    return requiredRoles.some((role) => this.roles.includes(role));
+    // return true;
   }
 
   ngOnInit(): void {
@@ -64,13 +73,15 @@ export class CarDriverDetailsComponent implements OnInit {
         this.cars = data;
       }
     );
+
+    this.roles = this.keycloakService.getUserRoles();
   }
 
   showCarDriver() {
 
     // @ts-ignore
     const car_driverId: number = +this.route.snapshot.paramMap.get('id');
-    this.car_driverService.getCarDriver(car_driverId).subscribe( data => {
+    this.car_driverService.getCarDriver(car_driverId).subscribe(data => {
       this.car_driver = data;
     });
   }
@@ -83,8 +94,14 @@ export class CarDriverDetailsComponent implements OnInit {
       return;
     }
 
-    this.car_driver_default.car = this.carDetailSelect?.value[0]?._links.self.href;
-    this.car_driver_default.driver = this.driverDetailSelect?.value[0]?._links.self.href;
+    try {
+      this.car_driver_default.car = this.carDetailSelect?.value[0]?._links.self.href;
+      this.car_driver_default.driver = this.driverDetailSelect?.value[0]?._links.self.href;
+    } catch (Error) {
+      this.car_driver_default.car = this.carDetailSelect?.value[0];
+      this.car_driver_default.driver = this.driverDetailSelect?.value[0];
+    }
+
     if (this.car_driver.id != null) {
       this.car_driverService.patchCarDriver(this.car_driver.id, this.car_driver_default).subscribe({
           next: response => {

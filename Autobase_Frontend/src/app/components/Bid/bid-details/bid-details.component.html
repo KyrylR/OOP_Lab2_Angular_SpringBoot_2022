@@ -1,7 +1,4 @@
 <div class="container">
-  <div class ="m-2 container">
-    <h4>Id: {{ bid?.id }}</h4>
-  </div>
   <div class="m-2 container">
     <h4>Work purpose: {{ bid?.workPurpose }}</h4>
   </div>
@@ -18,11 +15,14 @@
     <h4>Driver Id: {{ bid?.driverId }}</h4>
   </div>
 
-  <form [formGroup]="bidDetailFormGroup" (ngSubmit)="onUpdate()">
+  <div *ngIf="hasRole" class="container">
+    <form [formGroup]="bidDetailFormGroup" (ngSubmit)="onUpdate()">
       <div class="m-2 container p-2">
         <label for="workPurpose">Work Purpose</label>
-        <input type="text" class="m-2 form-control" id="workPurpose" formControlName="workPurpose" placeholder="Enter work purpose">
-        <div *ngIf="workPurpose?.invalid && (workPurpose?.dirty   || workPurpose?.touched)" class="m-2 alert alert-danger mt-1">
+        <input type="text" class="m-2 form-control" id="workPurpose" formControlName="workPurpose"
+               placeholder="Enter work purpose">
+        <div *ngIf="workPurpose?.invalid && (workPurpose?.dirty   || workPurpose?.touched)"
+             class="m-2 alert alert-danger mt-1">
           <div *ngIf="workPurpose?.errors?.['required'] || workPurpose?.errors?.['notOnlyWhitespace']">
             Work purpose is required
           </div>
@@ -39,8 +39,10 @@
       </div>
       <div class="m-2 container p-2">
         <label for="driverFeedback">Driver feedback</label>
-        <input type="text" class="m-2 form-control" id="driverFeedback" formControlName="driverFeedback" placeholder="Enter driver feedback">
-        <div *ngIf="driverFeedback?.invalid && (driverFeedback?.dirty || driverFeedback?.touched)" class="m-2 alert alert-danger mt-1">
+        <input type="text" class="m-2 form-control" id="driverFeedback" formControlName="driverFeedback"
+               placeholder="Enter driver feedback">
+        <div *ngIf="driverFeedback?.invalid && (driverFeedback?.dirty || driverFeedback?.touched)"
+             class="m-2 alert alert-danger mt-1">
           <div *ngIf="driverFeedback?.errors?.['required'] || driverFeedback?.errors?.['notOnlyWhitespace']">
             Driver feedback is required
           </div>
@@ -57,8 +59,8 @@
           </select>
         </div>
       </div>
-    <button type="submit" class="m-2 btn btn-success p-2">Update</button>
-  </form>
-
-  <button type="submit" class="m-2 btn btn-danger p-2" (click)="onDelete()">Delete</button>
+      <button type="submit" class="m-2 btn btn-success p-2">Update</button>
+    </form>
+    <button type="submit" class="m-2 btn btn-danger p-2" (click)="onDelete()">Delete</button>
+  </div>
 </div>

@@ -1,45 +1,44 @@
 <div class="m-2 container">
   <div class="m-2 container">
-    <h4>Id: {{ car_driver?.id }}</h4>
-  </div>
-  <div class="m-2 container">
     <h4>Car: {{ car_driver?.carId }}</h4>
   </div>
   <div class="m-2 container">
     <h4>Driver: {{ car_driver?.driverId }}</h4>
   </div>
 
-  <form [formGroup]="car_driverDetailFormGroup" (ngSubmit)="onUpdate()">
-    <div class="m-2 container p-2">
-      <div class="m-2 form-group">
-        <label for="carDetailSelect">Choose Car</label>
-        <select multiple class="m-2 form-control" formControlName="carDetailSelect" id="carDetailSelect">
-          <option [ngValue]="car" *ngFor="let car of cars">{{ car.purpose }}</option>
-        </select>
-        <div *ngIf="carDetailSelect?.invalid && (carDetailSelect?.dirty || carDetailSelect?.touched)"
-             class="alert alert-danger mt-1">
-          <div *ngIf="carDetailSelect?.errors?.['required']">
-            Driver Select is required
+  <div *ngIf="hasRole" class="container">
+    <form [formGroup]="car_driverDetailFormGroup" (ngSubmit)="onUpdate()">
+      <div class="m-2 container p-2">
+        <div class="m-2 form-group">
+          <label for="carDetailSelect">Choose Car</label>
+          <select multiple class="m-2 form-control" formControlName="carDetailSelect" id="carDetailSelect">
+            <option [ngValue]="car" *ngFor="let car of cars">{{ car.purpose }}</option>
+          </select>
+          <div *ngIf="carDetailSelect?.invalid && (carDetailSelect?.dirty || carDetailSelect?.touched)"
+               class="alert alert-danger mt-1">
+            <div *ngIf="carDetailSelect?.errors?.['required']">
+              Driver Select is required
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="m-2 container p-2">
-      <div class="m-2 form-group">
-        <label for="driverDetailSelect">Choose Driver</label>
-        <select multiple class="m-2 form-control" formControlName="driverDetailSelect" id="driverDetailSelect">
-          <option [ngValue]="driver" *ngFor="let driver of drivers">{{ driver.name }}</option>
-        </select>
-        <div *ngIf="driverDetailSelect?.invalid && (driverDetailSelect?.dirty || driverDetailSelect?.touched)"
-             class="alert alert-danger mt-1">
-          <div *ngIf="driverDetailSelect?.errors?.['required']">
-            Driver Select is required
+      <div class="m-2 container p-2">
+        <div class="m-2 form-group">
+          <label for="driverDetailSelect">Choose Driver</label>
+          <select multiple class="m-2 form-control" formControlName="driverDetailSelect" id="driverDetailSelect">
+            <option [ngValue]="driver" *ngFor="let driver of drivers">{{ driver.name }}</option>
+          </select>
+          <div *ngIf="driverDetailSelect?.invalid && (driverDetailSelect?.dirty || driverDetailSelect?.touched)"
+               class="alert alert-danger mt-1">
+            <div *ngIf="driverDetailSelect?.errors?.['required']">
+              Driver Select is required
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <button type="submit" class="m-2 btn btn-success p-2">Update</button>
-  </form>
+      <button type="submit" class="m-2 btn btn-success p-2">Update</button>
+    </form>
 
-  <button type="submit" class="m-2 btn btn-danger p-2" (click)="onDelete()">Delete</button>
+    <button type="submit" class="m-2 btn btn-danger p-2" (click)="onDelete()">Delete</button>
+  </div>
 </div>

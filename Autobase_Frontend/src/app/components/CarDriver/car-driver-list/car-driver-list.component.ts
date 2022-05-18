@@ -7,6 +7,7 @@ import {ActivatedRoute} from "@angular/router";
 import {DriverService} from "../../../services/driver.service";
 import {CarService} from "../../../services/car.service";
 import {Car} from "../../../interface/car";
+import {KeycloakService} from "keycloak-angular";
 
 @Component({
   selector: 'app-car-driver-list',
@@ -21,6 +22,8 @@ export class CarDriverListComponent implements OnInit {
 
   car_driverFormGroup!: FormGroup;
 
+  roles: string[] = [];
+
   private car_driver_default: any = {
     'car': '',
     'driver': ''
@@ -30,7 +33,8 @@ export class CarDriverListComponent implements OnInit {
               private car_driverService: CarDriverService,
               private route: ActivatedRoute,
               private driverService: DriverService,
-              private carService: CarService) {
+              private carService: CarService,
+              private keycloakService: KeycloakService) {
   }
 
   get carSelect() {
@@ -39,6 +43,12 @@ export class CarDriverListComponent implements OnInit {
 
   get driverSelect() {
     return this.car_driverFormGroup.get('driverSelect');
+  }
+
+  get hasRole(): boolean {
+    let requiredRoles = ["ROLE_ADMIN"]
+    return requiredRoles.some((role) => this.roles.includes(role));
+    // return true;
   }
 
   ngOnInit(): void {
@@ -64,6 +74,8 @@ export class CarDriverListComponent implements OnInit {
         this.cars = data;
       }
     );
+
+    this.roles = this.keycloakService.getUserRoles();
   }
 
   onPost() {
@@ -74,8 +86,14 @@ export class CarDriverListComponent implements OnInit {
       return;
     }
 
-    this.car_driver_default.car = this.carSelect?.value[0]?._links.self.href;
-    this.car_driver_default.driver = this.driverSelect?.value[0]?._links.self.href;
+    try {
+      this.car_driver_default.car = this.carSelect?.value[0]?._links.self.href;
+      this.car_driver_default.driver = this.driverSelect?.value[0]?._links.self.href;
+    } catch (Error) {
+      this.car_driver_default.car = this.carSelect?.value[0];
+      this.car_driver_default.driver = this.driverSelect?.value[0];
+    }
+
     this.car_driverService.createCarDriver(this.car_driver_default).subscribe({
         next: response => {
           console.log(`Response from deleting: ${response}`);

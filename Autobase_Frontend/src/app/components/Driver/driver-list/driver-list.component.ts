@@ -31,9 +31,15 @@ export class DriverListComponent implements OnInit {
     return this.driverFormGroup.get('driverName');
   }
 
+  get hasRole(): boolean {
+    let requiredRoles = ["ROLE_ADMIN"]
+    return requiredRoles.some((role) => this.roles.includes(role));
+    // return true;
+  }
+
   ngOnInit(): void {
     this.driverService.getDrivers().subscribe(
-      data =>  {
+      data => {
         this.drivers = data;
         console.log(data);
         this.driverFormGroup = this.formBuilder.group({
@@ -50,14 +56,8 @@ export class DriverListComponent implements OnInit {
           CustomValidators.notOnlyWhitespace])
     });
 
-    // this.roles = this.keycloakService.getUserRoles();
-    // console.log("Roles: " + this.roles);
-  }
-
-  get hasRole(): boolean {
-    // let requiredRoles = ["ROLE_ADMIN"]
-    // return requiredRoles.some((role) => this.roles.includes(role));
-    return true;
+    this.roles = this.keycloakService.getUserRoles();
+    console.log("Roles: " + this.roles);
   }
 
   onPost() {

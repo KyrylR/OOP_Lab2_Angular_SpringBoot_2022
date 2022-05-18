@@ -4,6 +4,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomValidators} from "../../../validators/custom-validators";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CarService} from "../../../services/car.service";
+import {KeycloakService} from "keycloak-angular";
 
 @Component({
   selector: 'app-car-details',
@@ -14,7 +15,9 @@ export class CarDetailsComponent implements OnInit {
 
   car!: Car;
 
-  carDetailFormGroup!: FormGroup;
+  carDetailFormGroup!: FormGroup
+
+  roles: string[] = [];
 
   private car_default: any = {
     'purpose': '',
@@ -24,7 +27,8 @@ export class CarDetailsComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private carService: CarService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private keycloakService: KeycloakService) {
   }
 
   get carDetailPurpose() {
@@ -33,6 +37,12 @@ export class CarDetailsComponent implements OnInit {
 
   get carDetailReady() {
     return this.carDetailFormGroup.get('carDetailReady');
+  }
+
+  get hasRole(): boolean {
+    let requiredRoles = ["ROLE_ADMIN"]
+    return requiredRoles.some((role) => this.roles.includes(role));
+    // return true;
   }
 
   ngOnInit(): void {
@@ -45,6 +55,8 @@ export class CarDetailsComponent implements OnInit {
         Validators.minLength(2), CustomValidators.notOnlyWhitespace]),
       carDetailReady: new FormControl('')
     });
+
+    this.roles = this.keycloakService.getUserRoles();
   }
 
   showCar() {
@@ -53,7 +65,7 @@ export class CarDetailsComponent implements OnInit {
     const carId: number = +this.route.snapshot.paramMap.get('id');
     this.carService.getCar(carId).subscribe(data => {
       this.car = data;
-      console.log("Ready: " +  data.ready)
+      console.log("Ready: " + data.ready)
     });
   }
 
@@ -68,7 +80,7 @@ export class CarDetailsComponent implements OnInit {
     this.car_default.purpose = this.carDetailPurpose?.value;
     this.car_default.isReady = this.carDetailReady?.value;
 
-    console.log("Detail ready: " + this.car_default.ready );
+    console.log("Detail ready: " + this.car_default.ready);
     if (this.car.id != null) {
       this.carService.patchCar(this.car.id, this.car_default).subscribe({
           next: response => {

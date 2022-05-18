@@ -6,6 +6,7 @@ import {BidService} from "../../../services/bid.service";
 import {ActivatedRoute} from "@angular/router";
 import {DriverService} from "../../../services/driver.service";
 import {Driver} from "../../../interface/driver";
+import {KeycloakService} from "keycloak-angular";
 
 @Component({
   selector: 'app-bid-list',
@@ -19,6 +20,8 @@ export class BidListComponent implements OnInit {
 
   bidFormGroup!: FormGroup;
 
+  roles: string[] = [];
+
   private bid_default: any = {
     'workPurpose': '',
     'isFinished': false,
@@ -29,7 +32,8 @@ export class BidListComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private bidService: BidService,
               private route: ActivatedRoute,
-              private driverService: DriverService) {
+              private driverService: DriverService,
+              private keycloakService: KeycloakService) {
   }
 
   get workPurpose() {
@@ -48,10 +52,17 @@ export class BidListComponent implements OnInit {
     return this.bidFormGroup.get('driverSelect');
   }
 
+  get hasRole(): boolean {
+    let requiredRoles = ["ROLE_ADMIN", "ROLE_MANAGER"]
+    return requiredRoles.some((role) => this.roles.includes(role));
+    // return true;
+  }
+
   ngOnInit(): void {
     this.bidService.getBids().subscribe(
       data => {
         this.bids = data;
+        console.log("Data: " + data)
       });
 
     this.bidFormGroup = this.formBuilder.group({
@@ -67,6 +78,8 @@ export class BidListComponent implements OnInit {
       data => {
         this.drivers = data;
       });
+
+    this.roles = this.keycloakService.getUserRoles();
   }
 
   onPost() {
@@ -80,7 +93,12 @@ export class BidListComponent implements OnInit {
     this.bid_default.workPurpose = this.workPurpose?.value;
     this.bid_default.finished = this.isFinished?.value;
     this.bid_default.driverFeedback = this.driverFeedback?.value;
-    this.bid_default.driver = this.driverSelect?.value[0]?._links.self.href;
+    try {
+      this.bid_default.driver = this.driverSelect?.value[0]?._links.self.href;
+    } catch (Error) {
+      this.bid_default.driver = this.driverSelect?.value[0];
+      console.log("Driver: " + JSON.stringify(this.bid_default.driver));
+    }
     this.bidService.createBid(this.bid_default).subscribe({
         next: response => {
           console.log(`Response from adding: ${response}`);

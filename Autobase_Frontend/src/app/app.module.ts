@@ -29,41 +29,57 @@ const routes: Routes = [
   {path: 'mainPage', component: MainPageComponent},
   {
     path: 'carDriver/:id',
-    component: CarDriverDetailsComponent
+    component: CarDriverDetailsComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
   },
   {
     path: 'carDrivers',
-    component: CarDriverListComponent
+    component: CarDriverListComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
   },
   {
     path: 'bid/:id',
-    component: BidDetailsComponent
+    component: BidDetailsComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
   },
   {
     path: 'bids',
-    component: BidListComponent
+    component: BidListComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
   },
   {
     path: 'car/:id',
-    component: CarDetailsComponent
+    component: CarDetailsComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
   },
   {
     path: 'cars',
-    component: CarListComponent
+    component: CarListComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
   },
   {
     path: 'driver/:id',
-    component: DriverDetailsComponent
+    component: DriverDetailsComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
   },
   {
     path: 'drivers',
     component: DriverListComponent,
-    // canActivate: [AuthGuard],
-    // data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
   },
   {
     path: 'sky',
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
   },
   {
     path: 'access-denied',
@@ -125,18 +141,18 @@ function initializeKeycloak(keycloak: KeycloakService) {
     KeycloakAngularModule
   ],
   providers: [
-    // AuthService,
-    // {
-    //   provide: APP_INITIALIZER,
-    //   useFactory: initializeKeycloak,
-    //   multi: true,
-    //   deps: [KeycloakService]
-    // },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: KeycloakBearerInterceptor,
-    //   multi: true,
-    // }
+    AuthService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService]
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: KeycloakBearerInterceptor,
+      multi: true,
+    }
   ],
   bootstrap: [AppComponent]
 })

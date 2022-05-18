@@ -14,11 +14,6 @@ export class DriverService {
   //TODO real url
   private baseDriverUrl = environment.apiUrl + "drivers";
 
-  default_driver: any = {
-    id: 0,
-    name: ''
-  }
-
   constructor(private httpClient: HttpClient) {
   }
 
@@ -47,7 +42,7 @@ export class DriverService {
     return this.httpClient.patch<Driver>(driverUrl, driver);
   }
 
-  deleteDriver(id: number): Observable<unknown> {
+  deleteDriver(id: number, driver: Driver): Observable<unknown> {
     return this.httpClient.delete<unknown>(`${this.baseDriverUrl}/${id}`);
   }
 }
