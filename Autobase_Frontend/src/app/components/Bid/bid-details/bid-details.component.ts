@@ -24,7 +24,7 @@ export class BidDetailsComponent implements OnInit {
 
   private bid_default: any = {
     'workPurpose': '',
-    'isFinished': false,
+    'finished': false,
     'driverFeedback': '',
     'driverId': ''
   }
@@ -103,12 +103,13 @@ export class BidDetailsComponent implements OnInit {
     }
 
     this.bid_default.workPurpose = this.workPurpose?.value;
-    this.bid_default.isFinished = this.isFinished?.value;
+    this.bid_default.finished = this.isFinished?.value;
     this.bid_default.driverFeedback = this.driverFeedback?.value;
     this.bid_default.driverId = this.driverSelect?.value[0].id;
 
     if (this.bid.id != null) {
-      this.bidService.updateBid(this.bid.id, this.bid_default).subscribe({
+      // @ts-ignore
+      this.bidService.updateBid(+this.route.snapshot.paramMap.get('id'), this.bid_default).subscribe({
         next: response => {
           console.log(`Response from updating: ${response}`);
           this.bid = response;
@@ -116,9 +117,9 @@ export class BidDetailsComponent implements OnInit {
         error: err => {
           console.log(`There was an error: ${err.message}`);
         },
-          complete: () => {
-            console.log('Done update the bid');
-          }
+        complete: () => {
+          console.log('Done update the bid');
+        }
         }
       );
     }

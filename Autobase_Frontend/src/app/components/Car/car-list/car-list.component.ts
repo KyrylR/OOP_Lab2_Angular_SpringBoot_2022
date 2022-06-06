@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Car} from "../../../interface/car";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomValidators} from "../../../validators/custom-validators";
@@ -17,6 +17,7 @@ export class CarListComponent implements OnInit {
   carFormGroup!: FormGroup;
 
   private car_default: any = {
+    'id': -1,
     'purpose': '',
     'ready': true
   }

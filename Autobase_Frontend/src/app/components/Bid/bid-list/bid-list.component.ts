@@ -24,7 +24,7 @@ export class BidListComponent implements OnInit {
 
   private bid_default: any = {
     'workPurpose': '',
-    'isFinished': false,
+    'finished': false,
     'driverFeedback': '',
     'driverId': ''
   }

@@ -94,11 +94,14 @@ export class CarDriverDetailsComponent implements OnInit {
       return;
     }
 
+    // @ts-ignore
+    console.log(this.car_driver_default.carId)
     this.car_driver_default.carId = this.carDetailSelect?.value[0].id;
     this.car_driver_default.driverId = this.driverDetailSelect?.value[0].id;
 
     if (this.car_driver.id != null) {
-      this.car_driverService.patchCarDriver(this.car_driver.id, this.car_driver_default).subscribe({
+      // @ts-ignore
+      this.car_driverService.patchCarDriver(+this.route.snapshot.paramMap.get('id'), this.car_driver_default).subscribe({
         next: response => {
           console.log(`Response from updating: ${response}`);
           this.car_driver = response;
@@ -106,9 +109,9 @@ export class CarDriverDetailsComponent implements OnInit {
         error: err => {
           console.log(`There was an error: ${err.message}`);
         },
-          complete: () => {
-            console.log('Done update the car_driver');
-          }
+        complete: () => {
+          console.log('Done update the car_driver');
+        }
         }
       );
     }

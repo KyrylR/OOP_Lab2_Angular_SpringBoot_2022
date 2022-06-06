@@ -20,8 +20,9 @@ export class CarDetailsComponent implements OnInit {
   roles: string[] = [];
 
   private car_default: any = {
+    'id': -1,
     'purpose': '',
-    'isReady': true
+    'ready': true
   }
 
   constructor(private formBuilder: FormBuilder,
@@ -78,7 +79,7 @@ export class CarDetailsComponent implements OnInit {
     }
 
     this.car_default.purpose = this.carDetailPurpose?.value;
-    this.car_default.isReady = this.carDetailReady?.value;
+    this.car_default.ready = this.carDetailReady?.value;
 
     console.log("Detail ready: " + this.car_default.ready);
     if (this.car.id != null) {

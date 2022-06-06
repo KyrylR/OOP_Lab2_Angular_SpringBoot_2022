@@ -48,7 +48,7 @@ export class AuthGuard extends KeycloakAuthGuard {
       // window.sessionStorage.setItem("x-auth-token", route.data)
       return true;
     } else {
-      // redirect to error page if the user doesn't have the nessecairy  role to access
+      // redirect to error page if the user doesn't have the necessary  role to access
       this.router.navigate(['access-denied']);
       return false;
     }
