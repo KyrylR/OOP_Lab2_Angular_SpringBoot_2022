@@ -26,7 +26,7 @@ export class BidListComponent implements OnInit {
     'workPurpose': '',
     'isFinished': false,
     'driverFeedback': '',
-    'driver': ''
+    'driverId': ''
   }
 
   constructor(private formBuilder: FormBuilder,
@@ -93,21 +93,18 @@ export class BidListComponent implements OnInit {
     this.bid_default.workPurpose = this.workPurpose?.value;
     this.bid_default.finished = this.isFinished?.value;
     this.bid_default.driverFeedback = this.driverFeedback?.value;
-    try {
-      this.bid_default.driver = this.driverSelect?.value[0]?._links.self.href;
-    } catch (Error) {
-      this.bid_default.driver = this.driverSelect?.value[0];
-      console.log("Driver: " + JSON.stringify(this.bid_default.driver));
-    }
+    this.bid_default.driverId = this.driverSelect?.value[0].id;
+    console.log("Driver: " + JSON.stringify(this.bid_default.driver));
+
     this.bidService.createBid(this.bid_default).subscribe({
-        next: response => {
-          console.log(`Response from adding: ${response}`);
-          this.bids.push(response)
-        },
-        error: err => {
-          console.log(`There was an error: ${err.message}`);
-        },
-        complete: () => {
+      next: response => {
+        console.log(`Response from adding: ${response}`);
+        this.bids.push(response)
+      },
+      error: err => {
+        console.log(`There was an error: ${err.message}`);
+      },
+      complete: () => {
           console.log('Done add the bid');
         }
       }

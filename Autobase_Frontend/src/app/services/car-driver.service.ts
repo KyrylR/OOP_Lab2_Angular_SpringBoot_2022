@@ -3,7 +3,6 @@ import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {CarDriver} from "../interface/car-driver";
-import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +16,7 @@ export class CarDriverService {
   }
 
   getCarDrivers(): Observable<CarDriver[]> {
-    return this.httpClient.get<GetResponseCarDrivers>(this.baseCarDriverUrl).pipe(
-      map(response => response._embedded.carDrivers)
-    );
+    return this.httpClient.get<CarDriver[]>(this.baseCarDriverUrl);
   }
 
   getCarDriver(id: number): Observable<CarDriver> {
@@ -35,7 +32,7 @@ export class CarDriverService {
   patchCarDriver(id: number, carDriver: any): Observable<CarDriver> {
     const carDriverUrl = `${this.baseCarDriverUrl}/${id}`;
 
-    return this.httpClient.patch<CarDriver>(carDriverUrl, carDriver);
+    return this.httpClient.put<CarDriver>(carDriverUrl, carDriver);
   }
 
   deleteCarDriver(id: number): Observable<unknown> {
@@ -43,9 +40,5 @@ export class CarDriverService {
   }
 }
 
-interface GetResponseCarDrivers {
-  _embedded: {
-    carDrivers: CarDriver[];
-  }
-}
+
 

@@ -25,8 +25,8 @@ export class CarDriverDetailsComponent implements OnInit {
   roles: string[] = [];
 
   private car_driver_default: any = {
-    'car': '',
-    'driver': ''
+    'carId': '',
+    'driverId': ''
   }
 
   constructor(private formBuilder: FormBuilder,
@@ -94,23 +94,18 @@ export class CarDriverDetailsComponent implements OnInit {
       return;
     }
 
-    try {
-      this.car_driver_default.car = this.carDetailSelect?.value[0]?._links.self.href;
-      this.car_driver_default.driver = this.driverDetailSelect?.value[0]?._links.self.href;
-    } catch (Error) {
-      this.car_driver_default.car = this.carDetailSelect?.value[0];
-      this.car_driver_default.driver = this.driverDetailSelect?.value[0];
-    }
+    this.car_driver_default.carId = this.carDetailSelect?.value[0].id;
+    this.car_driver_default.driverId = this.driverDetailSelect?.value[0].id;
 
     if (this.car_driver.id != null) {
       this.car_driverService.patchCarDriver(this.car_driver.id, this.car_driver_default).subscribe({
-          next: response => {
-            console.log(`Response from updating: ${response}`);
-            this.car_driver = response;
-          },
-          error: err => {
-            console.log(`There was an error: ${err.message}`);
-          },
+        next: response => {
+          console.log(`Response from updating: ${response}`);
+          this.car_driver = response;
+        },
+        error: err => {
+          console.log(`There was an error: ${err.message}`);
+        },
           complete: () => {
             console.log('Done update the car_driver');
           }

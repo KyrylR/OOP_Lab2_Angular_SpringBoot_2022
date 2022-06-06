@@ -25,8 +25,8 @@ export class CarDriverListComponent implements OnInit {
   roles: string[] = [];
 
   private car_driver_default: any = {
-    'car': '',
-    'driver': ''
+    'carId': '',
+    'driverId': ''
   }
 
   constructor(private formBuilder: FormBuilder,
@@ -86,24 +86,18 @@ export class CarDriverListComponent implements OnInit {
       return;
     }
 
-    try {
-      this.car_driver_default.car = this.carSelect?.value[0]?._links.self.href;
-      this.car_driver_default.driver = this.driverSelect?.value[0]?._links.self.href;
-    } catch (Error) {
-      this.car_driver_default.car = this.carSelect?.value[0];
-      this.car_driver_default.driver = this.driverSelect?.value[0];
-    }
-
+    this.car_driver_default.carId = this.carSelect?.value[0].id;
+    this.car_driver_default.driverId = this.driverSelect?.value[0].id;
     this.car_driverService.createCarDriver(this.car_driver_default).subscribe({
-        next: response => {
-          console.log(`Response from deleting: ${response}`);
-          this.car_drivers.push(response);
-        },
-        error: err => {
-          console.log(`There was an error: ${err.message}`);
-        },
-        complete: () => {
-          console.log('Done delete the car_driver');
+      next: response => {
+        console.log(`Response from deleting: ${response}`);
+        this.car_drivers.push(response);
+      },
+      error: err => {
+        console.log(`There was an error: ${err.message}`);
+      },
+      complete: () => {
+        console.log('Done delete the car_driver');
         }
       }
     );

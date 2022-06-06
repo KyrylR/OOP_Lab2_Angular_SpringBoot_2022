@@ -73,11 +73,11 @@
         </dependency>
 
 
-        <!-- Keycloak -->
-        <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-spring-boot-starter</artifactId>
-        </dependency>
+        <!--        &lt;!&ndash; Keycloak &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.keycloak</groupId>-->
+        <!--            <artifactId>keycloak-spring-boot-starter</artifactId>-->
+        <!--        </dependency>-->
     </dependencies>
 
 
@@ -103,7 +103,6 @@
         </resources>
 
         <plugins>
-
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>

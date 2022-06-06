@@ -26,7 +26,7 @@ export class BidDetailsComponent implements OnInit {
     'workPurpose': '',
     'isFinished': false,
     'driverFeedback': '',
-    'driver': ''
+    'driverId': ''
   }
 
   constructor(private formBuilder: FormBuilder,
@@ -105,20 +105,17 @@ export class BidDetailsComponent implements OnInit {
     this.bid_default.workPurpose = this.workPurpose?.value;
     this.bid_default.isFinished = this.isFinished?.value;
     this.bid_default.driverFeedback = this.driverFeedback?.value;
-    try {
-      this.bid_default.driver = this.driverSelect?.value[0]?._links.self.href;
-    } catch (Error) {
-      this.bid_default.driver = this.driverSelect?.value[0];
-    }
+    this.bid_default.driverId = this.driverSelect?.value[0].id;
+
     if (this.bid.id != null) {
       this.bidService.updateBid(this.bid.id, this.bid_default).subscribe({
-          next: response => {
-            console.log(`Response from updating: ${response}`);
-            this.bid = response;
-          },
-          error: err => {
-            console.log(`There was an error: ${err.message}`);
-          },
+        next: response => {
+          console.log(`Response from updating: ${response}`);
+          this.bid = response;
+        },
+        error: err => {
+          console.log(`There was an error: ${err.message}`);
+        },
           complete: () => {
             console.log('Done update the bid');
           }

@@ -4,26 +4,115 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d848479-ffbb-4454-9581-4f6c99a57ce7" name="Changes" comment="">
+    <list default="true" id="8d848479-ffbb-4454-9581-4f6c99a57ce7" name="Changes" comment="fix Bugs">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Autobase_Backend_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Autobase_Backend_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/127d2d51dadc8d26bac980cc1cf49de1db000809" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/13092f0d7cad880bdb03ee4b89ee07754ed1d831" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/1582e91bb6689ba276511adb7d58cf342ed86a9d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/34f08c6accf1f612df2bc2411f8e631773f2d100" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/9/39786c00ba40637ed6ad949386ed07be305f7cda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40869fb913c870b558c4e10c00b8e435a6c60a56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/1/41b0d4c5d873d35bf0561061561047ac7f4162ce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/4569ee987c2963bdc7ee2a03e5b2a39019196ea4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/579b983e066c8d37fcffa007c0b2e9376461eee2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f11eec7714484ff81647cca260dad5c8e8fd9a2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/6191c1815b2145004f21e6d70c3c041c3ac08435" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/722dba599cb0bd59d43bf50205037339b0b1aa84" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/6/7656a136063bfd982656802f98a4e9c2e49b096d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7f075e2e75c62d8aae67f02ee080abd79278c45c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/7/87efbbe4164a66d35d1a30850296b6765eecc1a9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/91116cec1503c023510bf8453a177401805f863e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/9477b05d6a3a9cf6a0d5902cbf761f2d4b6a087d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/0/a0a87ad54189fd610109d06265c606f6c079de14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2d8eaa8e0332ad899801a25081ca0971ef941c0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/ab2fb26c518365db3e60048cf3b94a13a44c59ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b06ad0d4a908fc5d5218e3490045b61df5b9816f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b685f510d099954078d95c752f85677c15203660" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c3bc9a09963d31d08f6d490394ba695b44c423bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c43712712bbf5d1422e5dd9879669d8ba733b9d2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c599f9f5a38ae50665df8fba8d8f2dd7c077e6b7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/a/cac4927fe77881e4ef64a43adf441a5dbb36c7c2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d15e557666b9295e82a4ec26b1f14790a7bd9638" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d6b340a91825733d33fa35237d7215e55fa575b9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d6ca982cfe76a313536ad5e1b1e5b42b15ff21f7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d8717e39c429d2127bc9b3be20121e9ee8bc55f2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e4dbf1e32982038125d4e630dde7e4554677df77" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed16e7168ffda930958da97708b46608fff62fef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f358c4bd1ef851271813374127502950613283a8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe2067e4d77ba69821de4bbaa9619acfd11b763d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/controllers/BidController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/controllers/CarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/controllers/CarDriverController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/controllers/DriverController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/converter/BidConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/converter/CarDriverConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/dto/BidDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/dto/CarDriverDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/entity/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/exceptions/IncorrectParameterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/BidService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/CarDriverService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/CarService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/DriverService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/utils/ServerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_68.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_68.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_keycloak_keycloak_adapter_core_18_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_keycloak_keycloak_adapter_spi_18_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_keycloak_keycloak_authz_client_18_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_keycloak_keycloak_common_18_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_keycloak_keycloak_core_18_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_keycloak_keycloak_spring_boot_2_adapter_18_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_keycloak_keycloak_spring_boot_adapter_core_18_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_keycloak_keycloak_spring_boot_starter_18_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_keycloak_keycloak_spring_security_adapter_18_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_keycloak_spring_boot_container_bundle_18_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/7/1728ad331d64ea0981caada6247c8595f13f9287" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/56b5033407527cb76deda2bd1d9ab35a96edeb87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/config/MethodInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/config/MethodInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/controllers/RegistrationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/convertors/RegistrationConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/dto/Payload.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/dto/RegistrationDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/entity/RegistrationEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/entity/modelEntities/Bid.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/entity/Bid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/entity/modelEntities/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/entity/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/entity/modelEntities/CarDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/entity/CarDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/entity/modelEntities/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/entity/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/exceptions/MessageException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/messages/KeycloakMessageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/repository/RegistrationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/repository/modelRepositories/BidRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/repository/BidRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/repository/modelRepositories/CarDriverRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/repository/CarDriverRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/repository/modelRepositories/CarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/repository/CarRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/repository/modelRepositories/DriverRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/repository/DriverRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/RegistrationService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-details/bid-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-details/bid-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/auth/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/auth/auth.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/auth/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-details/bid-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-details/bid-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-list/bid-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-list/bid-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-list/bid-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-list/bid-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-details/car-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-details/car-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-details/car-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-details/car-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-list/car-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-list/car-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-list/car-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-list/car-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/CarDriver/car-driver-details/car-driver-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/CarDriver/car-driver-details/car-driver-details.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/CarDriver/car-driver-details/car-driver-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/CarDriver/car-driver-details/car-driver-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/CarDriver/car-driver-list/car-driver-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/CarDriver/car-driver-list/car-driver-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/CarDriver/car-driver-list/car-driver-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/CarDriver/car-driver-list/car-driver-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Driver/driver-details/driver-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Driver/driver-details/driver-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Driver/driver-details/driver-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Driver/driver-details/driver-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Driver/driver-list/driver-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Driver/driver-list/driver-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/services/bid.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/services/bid.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/services/car-driver.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/services/car-driver.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/services/car.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/services/car.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/services/driver.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/services/driver.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/utils/app-init.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/validators/custom-valdators.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/validators/custom-valdators.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +128,15 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="true" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -68,50 +165,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/inter/source/Java/Projects/OOP_Lab2_Angular_SpringBoot_2022/Autobase_Frontend/src/assets&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;93149026194d4b6dc24c309cbd6f1ee2&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\inter\\source\\Java\\Projects\\OOP_Lab2_Angular_SpringBoot_2022\\Autobase_Frontend\\node_modules\\typescript\\lib&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "go.import.settings.migrated": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "C:/Users/inter/source/Java/Projects/OOP_Lab2_Angular_SpringBoot_2022",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "93149026194d4b6dc24c309cbd6f1ee2",
+    "ts.external.directory.path": "C:\\Users\\inter\\source\\Java\\Projects\\OOP_Lab2_Angular_SpringBoot_2022\\Autobase_Frontend\\node_modules\\typescript\\lib"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\Autobase_Frontend\src\assets" />
-      <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\Autobase_Backend\src\main\resources\liquibase" />
+      <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022" />
+      <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\demoSecurity\src\main\java\com\example\demosecurity" />
+      <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\demoSecurity\src\main\java" />
+      <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\demoSecurity" />
+      <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\demoSecurity\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\Autobase_Backend\src\main\resources" />
       <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\Autobase_Frontend\src" />
       <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\Autobase_Frontend\src\assets" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.demosecurity.config" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.AutobaseBackendApplication">
@@ -134,12 +228,34 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <configuration name="DemoSecurityApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demoSecurity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demosecurity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demosecurity" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demosecurity.DemoSecurityApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Angular Application (Autobase_Frontend)" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
     <configuration name="AutobaseBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Autobase_Backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ua.univ.autobase_backend.AutobaseBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoSecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demoSecurity" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demosecurity.DemoSecurityApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,6 +270,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DemoSecurityApplicationTests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -168,6 +289,22 @@
       <workItem from="1652725303937" duration="2984000" />
       <workItem from="1652766382469" duration="41359000" />
       <workItem from="1652873848808" duration="21316000" />
+      <workItem from="1652909785774" duration="152000" />
+      <workItem from="1652910034725" duration="18000" />
+      <workItem from="1652946606513" duration="11997000" />
+      <workItem from="1653035652166" duration="145000" />
+      <workItem from="1653285584055" duration="2767000" />
+      <workItem from="1653498998569" duration="598000" />
+      <workItem from="1653574726639" duration="640000" />
+      <workItem from="1653576166462" duration="173000" />
+      <workItem from="1653741200726" duration="440000" />
+      <workItem from="1653742266541" duration="1242000" />
+      <workItem from="1653890223095" duration="1667000" />
+      <workItem from="1653893768318" duration="716000" />
+      <workItem from="1653901376229" duration="1956000" />
+      <workItem from="1654429922253" duration="1545000" />
+      <workItem from="1654507005816" duration="3823000" />
+      <workItem from="1654515383564" duration="16904000" />
     </task>
     <task id="LOCAL-00001" summary="Add auth">
       <created>1652886664963</created>
@@ -176,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652886664963</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix Bugs">
+      <created>1652909875789</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652909875789</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,9 +329,27 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add auth" />
+    <MESSAGE value="fix Bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix Bugs" />
   </component>
   <component name="VgoProject">
+    <integration-enabled>false</integration-enabled>
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/controllers/CarDriverController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/converter/CarDriverConverter.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

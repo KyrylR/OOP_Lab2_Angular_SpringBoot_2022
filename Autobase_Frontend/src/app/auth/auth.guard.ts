@@ -17,6 +17,12 @@ export class AuthGuard extends KeycloakAuthGuard {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ) {
+    // console.log("Route: " + route.url)
+    // console.log("Router: " + this.router.url)
+    // if (route.url.toString() === "mainPage") {
+    //   return true;
+    // }
+
     // Force the user to log in if currently unauthenticated.
     if (!this.authenticated) {
       await this.keycloak.login({
@@ -26,6 +32,8 @@ export class AuthGuard extends KeycloakAuthGuard {
     console.log("Guard here!")
     // Get the roles required from the route.
     const requiredRoles = route.data["roles"];
+
+    console.log('Data: ' + route.data["token"]);
 
     // Allow the user to to proceed if no additional roles are required to access the route.
     if (!(requiredRoles instanceof Array) || requiredRoles.length === 0) {
@@ -37,6 +45,7 @@ export class AuthGuard extends KeycloakAuthGuard {
     // Allow the user to proceed if all the required roles are present.
 
     if (requiredRoles.some((role) => this.roles.includes(role))) {
+      // window.sessionStorage.setItem("x-auth-token", route.data)
       return true;
     } else {
       // redirect to error page if the user doesn't have the nessecairy  role to access

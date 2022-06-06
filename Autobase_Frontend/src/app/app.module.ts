@@ -14,16 +14,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import { MainPageComponent } from './components/main-page/main-page.component';
-import { PageNotFoundComponent } from './components/errorPages/page-not-found/page-not-found.component';
-import { PageTimeOutComponent } from './components/errorPages/page-time-out/page-time-out.component';
-import { PageForbiddenComponent } from './components/errorPages/page-forbidden/page-forbidden.component';
-import { PageAccessDeniedComponent } from './components/errorPages/page-access-denied/page-access-denied.component';
-import {initializer} from "./utils/app-init";
+import {MainPageComponent} from './components/main-page/main-page.component';
+import {PageNotFoundComponent} from './components/errorPages/page-not-found/page-not-found.component';
+import {PageTimeOutComponent} from './components/errorPages/page-time-out/page-time-out.component';
+import {PageForbiddenComponent} from './components/errorPages/page-forbidden/page-forbidden.component';
+import {PageAccessDeniedComponent} from './components/errorPages/page-access-denied/page-access-denied.component';
 import {KeycloakAngularModule, KeycloakBearerInterceptor, KeycloakService} from "keycloak-angular";
 import {AuthGuard} from "./auth/auth.guard";
 import {environment} from "../environments/environment";
-import {AuthInterceptor, AuthService} from "./auth/auth.service";
+import {AuthService} from "./auth/auth.service";
 
 const routes: Routes = [
   {path: 'mainPage', component: MainPageComponent},
@@ -31,7 +30,7 @@ const routes: Routes = [
     path: 'carDriver/:id',
     component: CarDriverDetailsComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
+    data: {roles: ['ROLE_ADMIN', 'ROLE_MANAGER']},
   },
   {
     path: 'carDrivers',
@@ -106,7 +105,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
       },
       enableBearerInterceptor: true,
       bearerPrefix: 'Bearer',
-      bearerExcludedUrls: [],
+      bearerExcludedUrls: ['mainPage'],
       loadUserProfileAtStartUp: true,
     });
 }
