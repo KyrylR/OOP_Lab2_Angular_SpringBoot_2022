@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d848479-ffbb-4454-9581-4f6c99a57ce7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/BidService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/BidService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/CarDriverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/CarDriverService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/services/CarService.java" afterDir="false" />
@@ -220,7 +218,7 @@
       <workItem from="1654581812534" duration="2363000" />
       <workItem from="1654586759332" duration="3584000" />
       <workItem from="1654592341541" duration="272000" />
-      <workItem from="1654593296652" duration="564000" />
+      <workItem from="1654593296652" duration="984000" />
     </task>
     <task id="LOCAL-00001" summary="Add auth">
       <created>1652886664963</created>
@@ -257,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654592600613</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix Bugs(Finish)">
+      <created>1654593870031</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654593870031</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

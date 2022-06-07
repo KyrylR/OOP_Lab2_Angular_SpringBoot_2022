@@ -17,6 +17,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class DriverService {
     private static final String BAD_DRIVER_ID = "Bad driver id parameter!";
+
     private DriverRepository driverRepository;
 
     public List<Driver> getAllDrivers() {

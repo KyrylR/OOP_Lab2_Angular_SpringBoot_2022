@@ -24,8 +24,8 @@ public class BidService {
         return bidRepository.findAll();
     }
 
-    public Bid save(Bid driver) {
-        return bidRepository.save(driver);
+    public Bid save(Bid bid) {
+        return bidRepository.save(bid);
     }
 
     public Bid getBid(String id) {

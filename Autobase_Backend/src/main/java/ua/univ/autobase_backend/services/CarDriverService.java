@@ -23,8 +23,8 @@ public class CarDriverService {
         return carDriverRepository.findAll();
     }
 
-    public CarDriver save(CarDriver driver) {
-        return carDriverRepository.save(driver);
+    public CarDriver save(CarDriver carDriver) {
+        return carDriverRepository.save(carDriver);
     }
 
     public CarDriver getCarDriver(String id) {

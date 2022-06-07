@@ -23,8 +23,8 @@ public class CarService {
         return carRepository.findAll();
     }
 
-    public Car save(Car driver) {
-        return carRepository.save(driver);
+    public Car save(Car car) {
+        return carRepository.save(car);
     }
 
     public Car getCar(String id) {
