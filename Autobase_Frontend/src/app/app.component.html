@@ -5,7 +5,7 @@
   <a href="/drivers" class="nav__link" data-link>Drivers</a>
   <a href="/carDrivers" class="nav__link" data-link>Car-Drivers</a>
   <a href="/bids" class="nav__link" data-link>Bids</a>
-  <button class="nav__link btn-dark" (click)="logout()">Logout</button>
+  <button (click)="logout()" *ngIf="isLoggedIn" class="nav__link btn-dark" type="button">Log out</button>
   <a href="/Sky" class="nav__link" data-link>To the moooooon(err)!</a>
 </nav>
 <div class="container">

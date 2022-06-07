@@ -17,11 +17,7 @@ export class AuthGuard extends KeycloakAuthGuard {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ) {
-    // console.log("Route: " + route.url)
-    // console.log("Router: " + this.router.url)
-    // if (route.url.toString() === "mainPage") {
-    //   return true;
-    // }
+    console.log("Guard here!")
 
     // Force the user to log in if currently unauthenticated.
     if (!this.authenticated) {
@@ -29,7 +25,7 @@ export class AuthGuard extends KeycloakAuthGuard {
         redirectUri: window.location.origin + state.url,
       });
     }
-    console.log("Guard here!")
+
     // Get the roles required from the route.
     const requiredRoles = route.data["roles"];
 

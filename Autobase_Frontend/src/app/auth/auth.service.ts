@@ -30,6 +30,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let token: string = "";
+    console.log("Token: " + token);
     try {
       // @ts-ignore
       token = this.keycloak.getKeycloakInstance().token();

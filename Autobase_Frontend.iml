@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$/Autobase_Frontend">
       <excludeFolder url="file://$MODULE_DIR$/Autobase_Frontend/dist" />
       <excludeFolder url="file://$MODULE_DIR$/Autobase_Frontend/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/Autobase_Frontend/.angular/cache" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

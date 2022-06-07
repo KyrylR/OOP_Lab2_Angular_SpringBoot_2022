@@ -36,54 +36,53 @@ const routes: Routes = [
     path: 'carDrivers',
     component: CarDriverListComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
+    data: {roles: ['ROLE_ADMIN', 'ROLE_MANAGER']},
   },
   {
     path: 'bid/:id',
     component: BidDetailsComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
+    data: {roles: ['ROLE_ADMIN', 'ROLE_MANAGER']},
   },
   {
     path: 'bids',
     component: BidListComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
+    data: {roles: ['ROLE_ADMIN', 'ROLE_MANAGER']},
   },
   {
     path: 'car/:id',
     component: CarDetailsComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
+    data: {roles: ['ROLE_ADMIN', 'ROLE_MANAGER']},
   },
   {
     path: 'cars',
     component: CarListComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
+    data: {roles: ['ROLE_ADMIN', 'ROLE_MANAGER']},
   },
   {
     path: 'driver/:id',
     component: DriverDetailsComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
+    data: {roles: ['ROLE_ADMIN', 'ROLE_MANAGER']},
   },
   {
     path: 'drivers',
     component: DriverListComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
+    data: {roles: ['ROLE_ADMIN', 'ROLE_MANAGER']},
   },
   {
     path: 'sky',
     component: PageNotFoundComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_ADMIN', 'ROLE_MANAGER'] },
+    data: {roles: ['ROLE_ADMIN', 'ROLE_MANAGER']},
   },
   {
     path: 'access-denied',
-    component: PageAccessDeniedComponent,
-    canActivate: [AuthGuard],
+    component: PageAccessDeniedComponent
   },
   {path: '', redirectTo: '/mainPage', pathMatch: 'full'},
   {path: '**', redirectTo: '/mainPage', pathMatch: 'full'}
@@ -100,8 +99,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
       initOptions: {
         onLoad: 'login-required',
         checkLoginIframe: false,
-        // silentCheckSsoRedirectUri:
-        //   window.location.origin + `silent-check-sso.html`
+
       },
       enableBearerInterceptor: true,
       bearerPrefix: 'Bearer',
@@ -109,7 +107,6 @@ function initializeKeycloak(keycloak: KeycloakService) {
       loadUserProfileAtStartUp: true,
     });
 }
-
 
 
 @NgModule({
@@ -155,6 +152,6 @@ function initializeKeycloak(keycloak: KeycloakService) {
   ],
   bootstrap: [AppComponent]
 })
-//@ts-ignore
-export class AppModule {}
-//@ts-ignore
+export class AppModule {
+}
+

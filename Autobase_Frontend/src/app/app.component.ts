@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {KeycloakService} from "keycloak-angular";
 import {Router} from "@angular/router";
 
@@ -7,13 +7,26 @@ import {Router} from "@angular/router";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Autobase_Frontend';
-  constructor(private keycloakService: KeycloakService,
-              private router: Router) {}
+  public isLoggedIn = false;
 
-  logout() {
-    this.keycloakService.logout();
-    this.router.navigate(['mainPage']);
+  constructor(private readonly keycloakService: KeycloakService,
+              private router: Router) {
+  }
+
+  public async ngOnInit() {
+    this.isLoggedIn = await this.keycloakService.isLoggedIn();
+
+  }
+
+  public logout() {
+    this.keycloakService.logout().then(
+      () => {
+        console.log("Logout");
+        this.router.navigate(['mainPage']);
+      }
+    );
+
   }
 }

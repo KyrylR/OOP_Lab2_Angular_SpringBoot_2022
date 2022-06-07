@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d848479-ffbb-4454-9581-4f6c99a57ce7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/1582e91bb6689ba276511adb7d58cf342ed86a9d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b06ad0d4a908fc5d5218e3490045b61df5b9816f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d15e557666b9295e82a4ec26b1f14790a7bd9638" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/6/d6ca982cfe76a313536ad5e1b1e5b42b15ff21f7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/utils/ServerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Backend/src/main/java/ua/univ/autobase_backend/utils/ServerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/auth/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/auth/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-details/bid-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-details/bid-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-list/bid-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Bid/bid-list/bid-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-details/car-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-details/car-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-list/car-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/Car/car-list/car-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/CarDriver/car-driver-details/car-driver-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/components/CarDriver/car-driver-details/car-driver-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/app/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/app/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autobase_Frontend/src/silent-check-sso.html" beforeDir="false" afterPath="$PROJECT_DIR$/Autobase_Frontend/src/assets/silent-check-sso.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,10 +87,10 @@
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/inter/source/Java/Projects/OOP_Lab2_Angular_SpringBoot_2022&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/inter/source/Java/KNU_Course3/OOP_Lab2_Angular_SpringBoot_2022/Autobase_Frontend/src/assets&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;93149026194d4b6dc24c309cbd6f1ee2&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\inter\\source\\Java\\Projects\\OOP_Lab2_Angular_SpringBoot_2022\\Autobase_Frontend\\node_modules\\typescript\\lib&quot;
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\inter\\source\\Java\\KNU_Course3\\OOP_Lab2_Angular_SpringBoot_2022\\Autobase_Frontend\\node_modules\\typescript\\lib&quot;
   }
 }</component>
   <component name="ReactorSettings">
@@ -91,11 +98,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\inter\source\Java\KNU_Course3\OOP_Lab2_Angular_SpringBoot_2022\Autobase_Frontend\src\assets" />
       <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022" />
       <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\demoSecurity\src\main\java\com\example\demosecurity" />
       <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\demoSecurity\src\main\java" />
       <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\demoSecurity" />
-      <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\demoSecurity\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\inter\source\Java\Projects\OOP_Lab2_Angular_SpringBoot_2022\Autobase_Backend\src\main\resources" />
@@ -116,7 +123,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AutobaseBackendApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (Autobase_Frontend)">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="OOP_Lab2_Angular_SpringBoot_2022" />
       <working_directory value="$PROJECT_DIR$" />
@@ -213,7 +220,9 @@
       <workItem from="1654429922253" duration="1545000" />
       <workItem from="1654507005816" duration="3823000" />
       <workItem from="1654515383564" duration="19506000" />
-      <workItem from="1654546293344" duration="3103000" />
+      <workItem from="1654546293344" duration="3366000" />
+      <workItem from="1654581812534" duration="2363000" />
+      <workItem from="1654586759332" duration="3584000" />
     </task>
     <task id="LOCAL-00001" summary="Add auth">
       <created>1652886664963</created>
@@ -236,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654538650201</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix Bugs(Finish)">
+      <created>1654551409668</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654551409668</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +263,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add auth" />
     <MESSAGE value="fix Bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix Bugs" />
+    <MESSAGE value="fix Bugs(Finish)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix Bugs(Finish)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
