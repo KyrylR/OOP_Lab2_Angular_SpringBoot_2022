@@ -3,6 +3,7 @@ package ua.univ.autobase_backend.services;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ua.univ.autobase_backend.entity.Bid;
 import ua.univ.autobase_backend.exceptions.IncorrectParameterException;
 import ua.univ.autobase_backend.repository.BidRepository;
@@ -37,6 +38,7 @@ public class BidService {
         }
     }
 
+    @Transactional
     public Bid updateBid(String id, Bid bid) {
         int intId = ServerUtils.parseParameterId(id);
         if (bidRepository.findById(intId).isPresent()) {
@@ -57,6 +59,7 @@ public class BidService {
         }
     }
 
+    @Transactional
     public void deleteBid(String id) {
         int intId = ServerUtils.parseParameterId(id);
         if (bidRepository.findById(intId).isPresent()) {

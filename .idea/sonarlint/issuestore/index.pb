@@ -143,8 +143,6 @@ w
 G.idea/sonarlint/issuestore/4/5/4569ee987c2963bdc7ee2a03e5b2a39019196ea4,4\d\4de17d18d57777e25e048811ab1ec66b2a4661c4
 d
 4Autobase_Frontend/src/app/services/driver.service.ts,9\e\9e85ab888521fd3c9c809253037385aac3878cbd
-H
-Autobase_Backend/pom.xml,5\2\52d2862a447bc695682b0582b49398145cd22949
 w
 G.idea/sonarlint/issuestore/9/1/91116cec1503c023510bf8453a177401805f863e,8\3\83b49986fb90b622fdd41cdfd69e9cf0c8f2abd7
 w
@@ -189,12 +187,6 @@ u
 EAutobase_Backend/src/main/resources/liquibase/db/changelog-master.xml,6\1\61701ea203ca818610cad4833dc68f72a93fa4c5
 }
 MAutobase_Backend/src/main/resources/liquibase/db/changelog/changelog-v1.1.sql,f\b\fb7b2c69f6b49103f12991fce916407678f1db8d
-€
-PAutobase_Backend/src/main/java/ua/univ/autobase_backend/services/BidService.java,3\3\33ef54885795f6342dbf77b72017472f2949cc80
-€
-PAutobase_Backend/src/main/java/ua/univ/autobase_backend/services/CarService.java,0\d\0d26b7f9945a2e3e613e590c349f77c485925ab4
-†
-VAutobase_Backend/src/main/java/ua/univ/autobase_backend/services/CarDriverService.java,7\0\70870294ebbb44fcb6a32567af6221168b7fe264
 ‹
 [Autobase_Backend/src/main/java/ua/univ/autobase_backend/repository/CarDriverRepository.java,f\a\faf9213689c25a8ce3b57eeb2751f76a8593ee45
 …
@@ -211,8 +203,6 @@ YAutobase_Backend/src/main/java/ua/univ/autobase_backend/controllers/DriverContr
 \Autobase_Backend/src/main/java/ua/univ/autobase_backend/config/InterceptorConfiguration.java,4\9\49fc1601681449a3153a1d962577ef85895a0bf7
 w
 GAutobase_Backend/src/main/java/ua/univ/autobase_backend/entity/Bid.java,c\7\c7f879c82653fe9fa27f13e5eb3465d6feadb798
-ƒ
-SAutobase_Backend/src/main/java/ua/univ/autobase_backend/services/DriverService.java,a\f\afaf74638db733301a3ad436d03de7aea0fbc3fa
 ˆ
 XAutobase_Backend/src/main/java/ua/univ/autobase_backend/repository/DriverRepository.java,4\0\40e83f4d1752aff9c07c119a795452083c100a85
 …
@@ -249,3 +239,13 @@ VAutobase_Backend/src/main/java/ua/univ/autobase_backend/controllers/CarControll
 TAutobase_Backend/src/main/java/ua/univ/autobase_backend/config/MyDataRestConfig.java,a\f\afb53a36982818486860a66ed04d0870e5af529e
 †
 VAutobase_Backend/src/main/java/ua/univ/autobase_backend/controllers/BidController.java,6\6\664303e923f17f9f0820131519722371876fc5c9
+S
+#Autobase_Frontend/package-lock.json,3\9\39786c00ba40637ed6ad949386ed07be305f7cda
+N
+Autobase_Frontend/package.json,6\5\659e540a49d2a980140c320f1a090cdd3f8b9f32
+^
+.Autobase_Frontend/src/app/auth/auth.service.ts,4\0\40869fb913c870b558c4e10c00b8e435a6c60a56
+T
+$OOP_Lab2_Angular_SpringBoot_2022.iml,3\4\34e5e5477746428fec82035a6f41bdee0f0639e4
+E
+Autobase_Frontend.iml,b\3\b33823312ea2ce40b0ecf873da3879a204407411

@@ -3,6 +3,7 @@ package ua.univ.autobase_backend.services;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ua.univ.autobase_backend.entity.CarDriver;
 import ua.univ.autobase_backend.exceptions.IncorrectParameterException;
 import ua.univ.autobase_backend.repository.CarDriverRepository;
@@ -36,6 +37,7 @@ public class CarDriverService {
         }
     }
 
+    @Transactional
     public CarDriver updateCarDriver(String id, CarDriver carDriver) {
         int intId = ServerUtils.parseParameterId(id);
         if (carDriverRepository.findById(intId).isPresent()) {
@@ -54,6 +56,7 @@ public class CarDriverService {
         }
     }
 
+    @Transactional
     public void deleteCarDriver(String id) {
         int intId = ServerUtils.parseParameterId(id);
         if (carDriverRepository.findById(intId).isPresent()) {
